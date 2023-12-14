@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4181609-cd10-47e8-8c73-6822e357826d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/features/auth/components/auth-form/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/register/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/register/route.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/auth/components/AuthForm.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/auth/components/auth-form/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/auth/components/auth-form/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/components/ToasterProvider.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +89,7 @@
       <workItem from="1702397458573" duration="757000" />
       <workItem from="1702398440808" duration="1827000" />
       <workItem from="1702402099841" duration="5842000" />
-      <workItem from="1702477532476" duration="17000" />
+      <workItem from="1702477532476" duration="4280000" />
     </task>
     <servers />
   </component>

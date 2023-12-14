@@ -1,17 +1,20 @@
 'use client';
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { AuthVariant } from "@/features/auth/components/auth-form/types";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { AuthFormData, authSchema } from "@/features/auth/components/auth-form/validation";
 import axios from "axios";
 import { zodResolver } from "@hookform/resolvers/zod";
 import toast from "react-hot-toast";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import AuthSocial from "@/features/auth/components/auth-social";
 import { BsGithub, BsGoogle } from 'react-icons/bs';
+import { useRouter } from "next/navigation";
 
 const AuthForm = () => {
+  const session = useSession();
+  const router = useRouter();
   const [authVariant, setAuthVariant] = useState<AuthVariant>('LOGIN');
   const {
     control,
@@ -49,7 +52,8 @@ const AuthForm = () => {
   const onSubmit: SubmitHandler<AuthFormData> = (data) => {
     if (authVariant === 'REGISTER') {
       axios.post('/api/register', data)
-        .catch(() => toast.error('Something went wrong!'))
+        .then(() => signIn('credentials', data))
+        .catch((e) => toast.error(e?.response?.data?.error))
     }
     if (authVariant === 'LOGIN') {
       signIn('credentials', {
@@ -62,10 +66,17 @@ const AuthForm = () => {
           }
           if (cb?.ok && !cb?.error) {
             toast.success('Logged in!');
+            router.push('/profile');
           }
         })
     }
   }
+
+  useEffect(() => {
+    if (session?.status === 'authenticated') {
+      router.push('/profile');
+    }
+  }, [session?.status]);
 
   return (
     <div className='w-68 sm:w-96 mx-auto flex flex-col gap-4 p-4 rounded bg-white'>
